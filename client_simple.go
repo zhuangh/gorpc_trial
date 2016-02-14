@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	//client, err := rpc.Dial("tcp", "localhost:42586")
-	client, err := rpc.Dial("tcp", "moore.ucsd.edu:42586")
+	client, err := rpc.Dial("tcp", "localhost:42586")
+	//client, err := rpc.Dial("tcp", "moore.ucsd.edu:42586")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -27,7 +27,7 @@ func main() {
 		var reply bool
 		fmt.Println("hi")
 		err = client.Call("Listener.GetLine", line, &reply)
-		fmt.Println("GetLine: %d\n", reply)
+		fmt.Println("GetLine: ", reply)
 		if err != nil {
 			log.Fatal(err)
 		}
